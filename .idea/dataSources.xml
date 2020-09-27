@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="8ac873b8-9259-49e7-a0d5-b7921f3e4830">
+    <data-source source="LOCAL" name="laravel_e-commerce@localhost" uuid="ec6ab114-b558-4ff5-b51d-d1c8294510ba">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/laravel_blog</jdbc-url>
-      <driver-properties>
-        <property name="serverTimezone" value="Asia/Dhaka" />
-      </driver-properties>
+      <jdbc-url>jdbc:mysql://localhost:3306/laravel_e-commerce</jdbc-url>
     </data-source>
   </component>
 </project>

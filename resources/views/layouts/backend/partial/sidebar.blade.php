@@ -5,7 +5,7 @@
             <li class="nav-item mr-auto"><a class="navbar-brand"
                                             href="">
                     <div class="brand-logo"></div>
-                    <h2 class="brand-text mb-0">LARAVEL BLOG</h2>
+                    <h2 class="brand-text mb-0">E-commerce</h2>
                 </a></li>
         </ul>
     </div>
@@ -28,6 +28,32 @@
                             class="menu-title"
                             data-i18n="Starter kit">Category</span></a>
                 </li>
+                <li class=" nav-item {{Request::is('admin/brand') ? 'active': ''}} "><a
+                    href="{{route('admin.brand.index')}}"><i class="feather icon-play"></i><span
+                        class="menu-title"
+                        data-i18n="Starter kit">Brand</span></a>
+                </li>
+                
+                <li class=" nav-item {{Request::is('admin/product') ? 'active': ''}} "><a
+                    href="{{route('admin.product.index')}}"><i class="feather icon-package"></i><span
+                        class="menu-title"
+                        data-i18n="Starter kit">products</span></a>
+
+                <ul class="menu-content">
+                    <li class=" nav-item {{Request::is('admin/product') ? 'active': ''}} "><a
+                            href="{{route('admin.product.index')}}"><i class="feather icon-check-square"></i><span
+                                class="menu-title"
+                                data-i18n="Starter kit">Dashboard</span></a>
+                    </li>
+                    <li class=" nav-item {{Request::is('admin/product/pending') ? 'active': ''}} "><a
+                            href="{{route('admin.product.pending')}}"><i class="feather icon-alert-octagon"></i><span
+                                class="menu-title"
+                                data-i18n="Starter kit">Pending Product</span></a>
+                    </li>
+                </ul>
+            </li>
+
+
                 <li class=" nav-item {{Request::is('admin/post') ? 'active': ''}} "><a
                         href="{{route('admin.post.index')}}"><i class="feather icon-check-square"></i><span
                             class="menu-title"
@@ -38,7 +64,7 @@
                                 href="{{route('admin.post.index')}}"><i class="feather icon-check-square"></i><span
                                     class="menu-title"
                                     data-i18n="Starter kit">Dashboard</span></a>
-                        <li class=" nav-item {{Request::is('admin/post') ? 'active': ''}} "><a
+                        <li class=" nav-item {{Request::is('admin/pending') ? 'active': ''}} "><a
                                 href="{{route('admin.pendingpost')}}"><i class="feather icon-check-square"></i><span
                                     class="menu-title"
                                     data-i18n="Starter kit">Pending Post</span></a>
@@ -46,11 +72,11 @@
                 </li>
 
                 <li class=" nav-item {{Request::is('admin/subscriber') ? 'active': ''}} "><a
-                        href="{{route('admin.subscriber.index')}}"><i class="feather icon-zap"></i><span class="menu-title"
-                                                                                                    data-i18n="Starter kit">Phone</span></a>
+                        href="{{route('admin.subscriber.index')}}"><i class="feather icon-users"></i><span class="menu-title"
+                                                                                                    data-i18n="Starter kit">Subscribers</span></a>
                 </li>
                 <li class=" nav-item {{Request::is('admin/phone') ? 'active': ''}} "><a
-                        href="{{route('admin.phone.index')}}"><i class="feather icon-zap"></i><span class="menu-title"
+                        href="{{route('admin.phone.index')}}"><i class="feather icon-phone"></i><span class="menu-title"
                                                                                                     data-i18n="Starter kit">Phone</span></a>
                 </li>
 

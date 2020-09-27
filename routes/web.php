@@ -13,14 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 Auth::routes(['verify' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
 
 
 
@@ -29,12 +27,28 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     route::get('dashboard','DashboardController@index')->name('dashboard');
     route::resource('tag','TagController');
     route::resource('category','CategoryController');
+    route::put('/category/{id}/active/','CategoryController@status')->name('category.status');
+    //route::put('/category/{id}/deactive/','CategoryController@deactive')->name('category.deactive');
+    //brand
+    route::resource('brand','BrandController');
+    route::put('/brand/{id}/active/','BrandController@status')->name('brand.status');
+
+    //Product
+    route::resource('product','ProductController');
+    route::get('/product/pending','ProductController@pending')->name('product.pending');
+    route::put('/post/{id}/approve/','ProductController@approve')->name('approve');
+    route::put('/brand/{id}/active/','ProductController@status')->name('brand.status');
+
+  //post
     route::resource('post','PostController');
     route::resource('subscriber','SubscriberController');
-    route::resource('phone','PhoneController');
-    //pending post
     route::get('pending','PostController@pending')->name('pendingpost');
     route::put('/post/{id}/approve/','PostController@approve')->name('approve');
+
+
+
+    route::resource('phone','PhoneController');
+
 
     //Profile
     route::get('profile','ProfileController@index')->name('profile');

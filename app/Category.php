@@ -10,4 +10,9 @@ class Category extends Model
     {
         return $this->belongsToMany(Post::class)->withTimestamps();
     }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class)->withTimestamps();
+    }
 }
